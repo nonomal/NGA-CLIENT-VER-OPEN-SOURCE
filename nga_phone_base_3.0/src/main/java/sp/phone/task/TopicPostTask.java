@@ -24,9 +24,9 @@ public class TopicPostTask extends AsyncTask<String, Integer, String> {
 
     private static final String LOG_TAG = TopicPostTask.class.getSimpleName();
 
-    private final String result_start_tag = "<span style='color:#aaa'>&gt;</span>";
+    private final String result_start_tag = "<title>";
 
-    private final String result_end_tag = "<br/>";
+    private final String result_end_tag = "</title>";
 
     private String mReplyUrl = Utils.getNGAHost() + "post.php?";
 
