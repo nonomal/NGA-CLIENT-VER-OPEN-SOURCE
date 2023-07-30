@@ -189,10 +189,10 @@ public class ForumBasicDecoder implements IForumDecoder {
 
 
         content = StringUtils.replaceAll(content, ignoreCaseTag
-                        + "\\[td\\scolspan=(\\d+)\\]",
+                        + "\\[td\\scolspan=?(\\d+)\\]",
                 "<td colspan='$1' style='border-left:1px solid #aaa;border-bottom:1px solid #aaa'>");
         content = StringUtils.replaceAll(content, ignoreCaseTag
-                        + "\\[td\\srowspan=(\\d+)\\]",
+                        + "\\[td\\srowspan=?(\\d+)\\]",
                 "<td rowspan='$1' style='border-left:1px solid #aaa;border-bottom:1px solid #aaa;'>");
         content = StringUtils.replaceAll(content, "\\[td\\]", "<td style='border-left:1px solid #aaa;border-bottom:1px solid #aaa;'>");
         content = StringUtils.replaceAll(content, "\\[/td\\]", "</td>");
@@ -211,7 +211,7 @@ public class ForumBasicDecoder implements IForumDecoder {
         content = StringUtils.replaceAll(content, ignoreCaseTag + "\\[/font\\]", "</span>");
 
         // size
-        content = StringUtils.replaceAll(content, ignoreCaseTag + "\\[size=(\\d+)%\\]",
+        content = StringUtils.replaceAll(content, ignoreCaseTag + "\\[size=(\\d+)%?\\]",
                 "<span style=\"font-size:$1%;line-height:$1%\">");
         content = StringUtils.replaceAll(content, ignoreCaseTag + "\\[/size\\]", "</span>");
 
