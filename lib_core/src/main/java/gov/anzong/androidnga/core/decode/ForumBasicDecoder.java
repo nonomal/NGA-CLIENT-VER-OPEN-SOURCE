@@ -211,7 +211,7 @@ public class ForumBasicDecoder implements IForumDecoder {
         content = StringUtils.replaceAll(content, ignoreCaseTag + "\\[/font\\]", "</span>");
 
         // size
-        content = StringUtils.replaceAll(content, ignoreCaseTag + "\\[size=(\\d+)%\\]",
+        content = StringUtils.replaceAll(content, ignoreCaseTag + "\\[size=(\\d+)%?\\]",
                 "<span style=\"font-size:$1%;line-height:$1%\">");
         content = StringUtils.replaceAll(content, ignoreCaseTag + "\\[/size\\]", "</span>");
 
