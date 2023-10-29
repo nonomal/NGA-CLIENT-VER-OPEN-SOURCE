@@ -113,7 +113,7 @@ public class NgaClientApp extends Application {
     }
 
     private void checkIn() {
-        CheckInTask.execute();
+        CheckInTask.autoCheckIn(this);
     }
 
     public static boolean isNewVersion() {
