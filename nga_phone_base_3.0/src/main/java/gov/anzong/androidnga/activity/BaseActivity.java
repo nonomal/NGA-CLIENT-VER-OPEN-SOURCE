@@ -17,7 +17,6 @@ import androidx.appcompat.widget.Toolbar;
 import com.justwen.androidnga.cloud.CloudServerManager;
 
 import gov.anzong.androidnga.R;
-import gov.anzong.androidnga.base.common.SwipeBackHelper;
 import gov.anzong.androidnga.base.util.ContextUtils;
 import gov.anzong.androidnga.base.util.PreferenceUtils;
 import gov.anzong.androidnga.common.PreferenceKey;
@@ -37,22 +36,13 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private boolean mHardwareAcceleratedEnabled = true;
 
-    private SwipeBackHelper mSwipeBackHelper;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         mConfig = PhoneConfiguration.getInstance();
         updateWindowFlag();
         updateThemeUi();
-        setSwipeBackEnable(PreferenceUtils.getData(PreferenceKey.KEY_SWIPE_BACK, false));
-        onCreateBeforeSuper(savedInstanceState);
         super.onCreate(savedInstanceState);
-        onCreateAfterSuper(savedInstanceState);
         ThemeManager.getInstance().initializeWebTheme(this);
-
-        if (mSwipeBackHelper != null) {
-            mSwipeBackHelper.onCreate(this);
-        }
 
         try {
             if (ThemeManager.getInstance().isNightMode()) {
@@ -61,39 +51,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         } catch (Exception e) {
             NLog.e("set navigation bar color exception occur: " + e);
         }
-    }
-
-    protected void setSwipeBackEnable(boolean enable) {
-        if (!enable) {
-            mSwipeBackHelper = null;
-        } else if (mSwipeBackHelper == null) {
-            mSwipeBackHelper = new SwipeBackHelper();
-        }
-    }
-
-    @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        if (mSwipeBackHelper != null) {
-            mSwipeBackHelper.onPostCreate();
-        }
-    }
-
-    @Override
-    public <T extends View> T findViewById(int id) {
-        T t = super.findViewById(id);
-        if (t == null && mSwipeBackHelper != null) {
-            t = mSwipeBackHelper.findViewById(id);
-        }
-        return t;
-    }
-
-    protected void onCreateBeforeSuper(@Nullable Bundle savedInstanceState) {
-
-    }
-
-    protected void onCreateAfterSuper(@Nullable Bundle savedInstanceState) {
-
     }
 
     protected void setToolbarEnabled(boolean enabled) {
