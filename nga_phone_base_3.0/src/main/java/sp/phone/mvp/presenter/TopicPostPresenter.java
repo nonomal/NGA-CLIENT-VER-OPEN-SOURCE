@@ -1,6 +1,5 @@
 package sp.phone.mvp.presenter;
 
-import android.Manifest;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,11 +18,8 @@ import java.util.List;
 
 import gov.anzong.androidnga.R;
 import gov.anzong.androidnga.base.util.ContextUtils;
-import gov.anzong.androidnga.base.util.PermissionUtils;
 import gov.anzong.androidnga.base.util.ToastUtils;
-import gov.anzong.androidnga.common.util.EmoticonUtils;
 import gov.anzong.androidnga.http.OnHttpCallBack;
-import gov.anzong.androidnga.rxjava.BaseSubscriber;
 import sp.phone.mvp.contract.TopicPostContract;
 import sp.phone.mvp.model.TopicPostModel;
 import sp.phone.param.PostParam;
@@ -109,16 +105,7 @@ public class TopicPostPresenter extends BasePresenter<TopicPostFragment, TopicPo
 
     @Override
     public void showFilePicker() {
-        PermissionUtils.request(mBaseView, new BaseSubscriber<Boolean>() {
-
-            @Override
-            public void onNext(Boolean aBoolean) {
-                if (aBoolean != null && aBoolean) {
-                    mBaseView.showFilePicker();
-                }
-
-            }
-        }, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        mBaseView.showFilePicker();
     }
 
     @Override
