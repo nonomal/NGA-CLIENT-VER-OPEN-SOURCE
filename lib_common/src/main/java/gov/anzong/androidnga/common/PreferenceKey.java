@@ -40,8 +40,6 @@ public class PreferenceKey {
 
     public static final String LEFT_HAND = "left_hand";
 
-    public static final String HARDWARE_ACCELERATED = "hardware_accelerated";
-
     public static final String BOOKMARK_BOARD = "bookmark_board";
 
     public static final String CHECK_IN_LAST_TIME = "check_in_last_time";

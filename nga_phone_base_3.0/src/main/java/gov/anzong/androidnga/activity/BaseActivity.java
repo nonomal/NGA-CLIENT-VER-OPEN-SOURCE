@@ -34,12 +34,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private boolean mToolbarEnabled;
 
-    private boolean mHardwareAcceleratedEnabled = true;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         mConfig = PhoneConfiguration.getInstance();
-        updateWindowFlag();
         updateThemeUi();
         super.onCreate(savedInstanceState);
         ThemeManager.getInstance().initializeWebTheme(this);
@@ -55,10 +52,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void setToolbarEnabled(boolean enabled) {
         mToolbarEnabled = enabled;
-    }
-
-    protected void setHardwareAcceleratedEnabled(boolean enabled) {
-        mHardwareAcceleratedEnabled = enabled;
     }
 
     public void setupToolbar(Toolbar toolbar) {
@@ -91,15 +84,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void updateThemeUi() {
         ThemeManager tm = ThemeManager.getInstance();
         setTheme(tm.getTheme(mToolbarEnabled));
-    }
-
-    protected void updateWindowFlag() {
-        int flag = 0;
-
-        if (mHardwareAcceleratedEnabled) {
-            flag = flag | WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED;
-        }
-        getWindow().addFlags(flag);
     }
 
     @Deprecated
