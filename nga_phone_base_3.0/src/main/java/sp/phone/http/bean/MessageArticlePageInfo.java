@@ -1,6 +1,8 @@
 package sp.phone.http.bean;
 
-public class MessageArticlePageInfo {
+import gov.anzong.androidnga.common.base.JavaBean;
+
+public class MessageArticlePageInfo implements JavaBean {
 
     private String subject;
     private String time;

@@ -1,10 +1,12 @@
 package sp.phone.http.bean;
 
+import gov.anzong.androidnga.common.base.JavaBean;
+
 /**
  * Created by Justwen on 2017/6/10.
  */
 
-public class TopicPostBean {
+public class TopicPostBean implements JavaBean {
 
     private DataBean data;
     private String encode;
@@ -43,7 +45,7 @@ public class TopicPostBean {
         this.debug = debug;
     }
 
-    public static class DataBean {
+    public static class DataBean implements JavaBean {
 
         private String action;
         private int fid;

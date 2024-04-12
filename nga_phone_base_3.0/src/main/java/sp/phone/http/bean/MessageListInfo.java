@@ -2,7 +2,9 @@ package sp.phone.http.bean;
 
 import java.util.List;
 
-public class MessageListInfo {
+import gov.anzong.androidnga.common.base.JavaBean;
+
+public class MessageListInfo implements JavaBean {
     int rowsPerPage;
     int nextPage;
     int currentPage;

@@ -2,7 +2,9 @@ package sp.phone.http.bean;
 
 import java.util.List;
 
-public class MessageDetailInfo {
+import gov.anzong.androidnga.common.base.JavaBean;
+
+public class MessageDetailInfo implements JavaBean {
     int nextPage;
     int currentPage;
     String alluser;

@@ -5,7 +5,9 @@ import android.os.Parcelable;
 
 import androidx.annotation.Nullable;
 
-public class Board implements Parcelable {
+import gov.anzong.androidnga.common.base.JavaBean;
+
+public class Board implements Parcelable, JavaBean {
 
     private int mFid;
 

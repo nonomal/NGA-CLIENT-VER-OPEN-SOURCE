@@ -1,6 +1,8 @@
 package sp.phone.http.bean;
 
-public class MessageThreadPageInfo {
+import gov.anzong.androidnga.common.base.JavaBean;
+
+public class MessageThreadPageInfo implements JavaBean {
 
     private int mid;
     private String subject;
