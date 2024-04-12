@@ -426,7 +426,7 @@ public class TopicListBean implements JavaBean {
                         '}';
             }
 
-            public static class PBean {
+            public static class PBean implements JavaBean {
                 /**
                  * tid : 12937812
                  * pid : 253178256

@@ -11,6 +11,7 @@ android {
         versionCode project.appVersionCode
         versionName project.appVersionName
 
+        consumerProguardFiles "consumer-rules.pro"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

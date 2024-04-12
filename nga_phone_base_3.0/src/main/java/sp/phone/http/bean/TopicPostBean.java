@@ -129,7 +129,7 @@ public class TopicPostBean implements JavaBean {
             this.attach_url = attach_url;
         }
 
-        public static class CUBean {
+        public static class CUBean implements JavaBean {
 
             private int uid;
             private int group_bit;
@@ -169,7 +169,7 @@ public class TopicPostBean implements JavaBean {
             }
         }
 
-        public static class FBean {
+        public static class FBean implements JavaBean {
 
             private int bit_data;
             private int fid;
