@@ -46,6 +46,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".message.MessageListActivity"
+            android:exported="false"
+            android:label="@string/label_activity_message_list"
+            android:theme="@style/AppThemeDayNightGreen" />
+
         <activity
             android:name=".activity.LoginActivity"
             android:configChanges="orientation|screenSize"

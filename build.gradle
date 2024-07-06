@@ -3,6 +3,7 @@ buildscript {
         compose_ui_version = '1.6.8'
         compose_version = compose_ui_version
         kotlin_version = '1.8.22'
+        core_ktx_version = '1.7.0'
         appcompat_version = "1.2.0"
         lifecycle_version = "2.6.2"
     }
