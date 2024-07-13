@@ -2,6 +2,7 @@ package sp.phone.http.retrofit;
 
 import java.util.Map;
 
+import gov.anzong.androidnga.common.base.JavaBean;
 import io.reactivex.Observable;
 import okhttp3.FormBody;
 import okhttp3.MultipartBody;

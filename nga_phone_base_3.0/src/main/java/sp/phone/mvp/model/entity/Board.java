@@ -19,7 +19,7 @@ public class Board implements Parcelable, JavaBean {
 
     private String mBoardHead;
 
-    public static class BoardKey implements Parcelable {
+    public static class BoardKey implements Parcelable, JavaBean {
 
         int fid;
 

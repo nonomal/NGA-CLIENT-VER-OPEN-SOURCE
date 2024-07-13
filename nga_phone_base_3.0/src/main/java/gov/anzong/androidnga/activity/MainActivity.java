@@ -19,6 +19,7 @@ import gov.anzong.androidnga.R;
 import gov.anzong.androidnga.arouter.ARouterConstants;
 import gov.anzong.androidnga.base.util.PermissionUtils;
 import gov.anzong.androidnga.base.util.ThemeUtils;
+import gov.anzong.androidnga.message.MessageListActivity;
 import sp.phone.common.User;
 import sp.phone.common.UserManagerImpl;
 import sp.phone.param.ParamKey;
@@ -139,9 +140,10 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startMessageActivity() {
-        ARouterUtils
-                .build(ARouterConstants.ACTIVITY_MESSAGE_LIST)
-                .navigation(this);
+        //ARouterUtils
+        //        .build(ARouterConstants.ACTIVITY_MESSAGE_LIST)
+        //        .navigation(this);
+        startActivity(new Intent(this, MessageListActivity.class));
     }
 
     private void aboutNgaClient() {
