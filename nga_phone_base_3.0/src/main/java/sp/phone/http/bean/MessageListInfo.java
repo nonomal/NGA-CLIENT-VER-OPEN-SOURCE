@@ -42,5 +42,13 @@ public class MessageListInfo implements JavaBean {
         this.messageEntryList = messageEntryList;
     }
 
-
+    @Override
+    public String toString() {
+        return "MessageListInfo{" +
+                "rowsPerPage=" + rowsPerPage +
+                ", nextPage=" + nextPage +
+                ", currentPage=" + currentPage +
+                ", messageEntryList=" + messageEntryList +
+                '}';
+    }
 }
