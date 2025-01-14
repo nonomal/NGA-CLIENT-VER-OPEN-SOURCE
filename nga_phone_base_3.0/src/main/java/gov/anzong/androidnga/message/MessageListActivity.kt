@@ -1,22 +1,16 @@
 package gov.anzong.androidnga.message
 
 import android.content.Intent
-import android.os.Bundle
 import android.text.TextUtils
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -33,40 +27,26 @@ import gov.anzong.androidnga.R
 import gov.anzong.androidnga.activity.MessageDetailActivity
 import gov.anzong.androidnga.arouter.ARouterConstants
 import gov.anzong.androidnga.compose.message.MessageViewModel
-import gov.anzong.androidnga.compose.theme.AppTheme
 import gov.anzong.androidnga.compose.widget.PullRefreshColumn
-import gov.anzong.androidnga.compose.widget.ScaffoldApp
 import sp.phone.http.bean.MessageThreadPageInfo
 
-class MessageListActivity : ComponentActivity() {
+class MessageListActivity : BaseComposeActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private val viewModel: MessageViewModel by lazy {
+        ViewModelProvider(this)[MessageViewModel::class.java]
+    }
 
-        setContent {
-            AppTheme {
-                ScaffoldApp(this, appTitle = title.toString(), fabClick = { createNewMessage() }) {
-                    Surface(
-                        modifier = Modifier.fillMaxSize(),
-                        color = MaterialTheme.colors.background
-                    ) {
-                        MessageListView()
-                    }
-                }
-            }
+    override fun getFabClickAction(): () -> Unit {
+        return {
+            ARouter.getInstance().build(ARouterConstants.ACTIVITY_MESSAGE_POST)
+                .withString("action", "new")
+                .navigation(this)
         }
     }
 
-    private fun createNewMessage() {
-        ARouter.getInstance().build(ARouterConstants.ACTIVITY_MESSAGE_POST)
-            .withString("action", "new")
-            .navigation(this)
-    }
-
     @Composable
-    fun MessageListView() {
-        val newViewModel = ViewModelProvider(this)[MessageViewModel::class.java]
-        val items = newViewModel.getMessageListData().collectAsLazyPagingItems()
+    override fun ContentView() {
+        val items = viewModel.getMessageListData().collectAsLazyPagingItems()
 
         PullRefreshColumn(
             columnItem = { MessageListItem(messageInfo = it) },
