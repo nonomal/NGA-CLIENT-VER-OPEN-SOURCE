@@ -27,13 +27,26 @@ import gov.anzong.androidnga.R
 import gov.anzong.androidnga.activity.MessageDetailActivity
 import gov.anzong.androidnga.arouter.ARouterConstants
 import gov.anzong.androidnga.compose.message.MessageViewModel
+import gov.anzong.androidnga.compose.widget.OptionMenuData
 import gov.anzong.androidnga.compose.widget.PullRefreshColumn
+import gov.anzong.androidnga.service.UserManagerService
 import sp.phone.http.bean.MessageThreadPageInfo
 
 class MessageListActivity : BaseComposeActivity() {
 
     private val viewModel: MessageViewModel by lazy {
         ViewModelProvider(this)[MessageViewModel::class.java]
+    }
+
+    override fun getOptionMenuData(): List<OptionMenuData>? {
+        val accountSwitch = OptionMenuData(title = "切换账号", action = {
+            showAccountSwitchDialog()
+        })
+        return arrayListOf(accountSwitch)
+    }
+
+    private fun showAccountSwitchDialog() {
+        UserManagerService.instance.showUserSwitchDialog(this) { buildContentView() }
     }
 
     override fun getFabClickAction(): () -> Unit {

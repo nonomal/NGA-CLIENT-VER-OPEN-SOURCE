@@ -1,9 +1,12 @@
 package gov.anzong.androidnga.compose.widget
 
+import android.graphics.drawable.Icon
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.DropdownMenu
+import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -14,7 +17,12 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -32,27 +40,68 @@ fun FloatingActionButton(fabClick: (() -> Unit)? = null) {
 }
 
 @Composable
-fun TopBarView(title: String, callback: () -> Unit) {
+fun OptionActionMenu(optionActions: List<OptionMenuData>? = null) {
+    if (optionActions == null) {
+        return
+    }
+    var expanded by remember { mutableStateOf(false) }
+    IconButton(onClick = { expanded = !expanded }) {
+        Icon(imageVector = Icons.Default.MoreVert, contentDescription = "")
+        DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            optionActions.forEach(action = {
+                DropdownMenuItem(onClick = {
+                    expanded = false
+                    it.action()
+                }) {
+                    Text(text = it.title!!)
+                }
+            })
+        }
+    }
+
+}
+
+@Composable
+fun TopAppBarEx(
+    topAppBarData: TopAppBarData,
+) {
     TopAppBar(backgroundColor = MaterialTheme.colors.primary, title = {
-        Text(title)
+        Text(topAppBarData.title)
     }, navigationIcon = {
         IconButton(onClick = {
-            callback()
+            topAppBarData.navigationIconAction?.invoke()
         }) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = "Localized description"
             )
         }
+    }, actions = {
+        OptionActionMenu(optionActions = topAppBarData.optionMenuData)
     })
 }
 
+data class TopAppBarData(val title: String) {
+    var navigationIconAction: (() -> Unit)? = null
+    var optionMenuData: List<OptionMenuData>? = null
+}
+
+data class OptionMenuData(
+    val title: String? = null,
+    val icon: Icon? = null,
+    val action: (() -> Unit),
+    val type: Int = OPTION_MENU_TYPE_HIDDEN
+) {
+    companion object {
+        const val OPTION_MENU_TYPE_HIDDEN = 1
+        const val OPTION_MENU_TYPE_ALWAYS_SHOW = 2
+    }
+}
 
 @Preview()
 @Composable
 fun ScaffoldApp(
-    activity: ComponentActivity? = null,
-    appTitle: String = "title",
+    topAppBarData: TopAppBarData = TopAppBarData("App"),
     fabClick: (() -> Unit)? = null,
     appContent: @Composable (() -> Unit)? = null,
 ) {
@@ -61,7 +110,9 @@ fun ScaffoldApp(
     }
     Scaffold(
         topBar = {
-            TopBarView(title = appTitle, callback = { activity?.finish() })
+            TopAppBarEx(
+                topAppBarData = topAppBarData
+            )
         },
         floatingActionButton = {
             FloatingActionButton(fabClick = fabClick)
