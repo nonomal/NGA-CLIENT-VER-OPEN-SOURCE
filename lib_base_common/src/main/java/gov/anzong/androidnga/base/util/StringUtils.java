@@ -8,8 +8,10 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Random;
 import java.util.regex.Pattern;
 
+import gov.anzong.androidnga.common.R;
 import okhttp3.RequestBody;
 import okio.Buffer;
 
@@ -17,6 +19,8 @@ import okio.Buffer;
  * @author Justwen
  */
 public class StringUtils {
+
+    private static final String[] SAYING = ContextUtils.getResources().getStringArray(R.array.saying);
 
     private static Map<String, Pattern> sPatternMap = new HashMap<>();
 
@@ -63,5 +67,14 @@ public class StringUtils {
         return new SimpleDateFormat(format, Locale.getDefault()).format(calendar.getTime());
     }
 
+    public static String getSaying() {
+        Random random = new Random();
+        int num = random.nextInt(SAYING.length);
+        String str =  SAYING[num];
+        if (str.contains(";")) {
+            str = str.replace(";", "-----");
+        }
+        return str;
+    }
 
 }

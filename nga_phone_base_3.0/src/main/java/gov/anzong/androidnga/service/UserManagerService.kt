@@ -3,7 +3,7 @@ package gov.anzong.androidnga.service
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.justwen.androidnga.module.account.api.IUserManagerService
+import com.justwen.androidnga.base.service.api.IUserManagerService
 import gov.anzong.androidnga.base.util.ToastUtils
 import sp.phone.common.UserManagerImpl
 

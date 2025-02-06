@@ -1,10 +1,10 @@
 plugins {
     id 'com.android.library'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.justwen.androidnga.module.message'
+    namespace 'com.justwen.androidnga.ui.compose'
     compileSdkVersion project.compileSdkVersion
 
     defaultConfig {
@@ -13,12 +13,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
     }
 
     buildTypes {
@@ -31,7 +25,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -44,27 +37,22 @@ android {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13.2'
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-
-    //compose
     implementation 'androidx.activity:activity-compose:1.9.0'
     implementation "androidx.compose.ui:ui:$compose_ui_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
     implementation "androidx.compose.material:material:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
+    implementation 'com.alibaba:arouter-api:1.5.2'
 
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.16.0"
     // paging
     implementation "androidx.paging:paging-compose:$paging_version"
+
+    implementation project(':lib_base_service_api')
     implementation project(':lib_base_common')
 
-    implementation project(':lib_base_network')
-    implementation project(':lib_base_ui_compose')
-    implementation project(':lib_base_service_api')
-    implementation project(':lib_core_data')
-
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }

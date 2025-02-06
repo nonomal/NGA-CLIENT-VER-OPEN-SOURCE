@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.justwen.androidnga.module.account'
+    namespace 'com.justwen.androidnga.base.service.api'
     compileSdkVersion project.compileSdkVersion
 
     defaultConfig {
@@ -29,6 +29,5 @@ android {
 
 dependencies {
     testImplementation 'junit:junit:4.13.2'
-    implementation 'com.alibaba:arouter-api:1.5.2'
-    implementation project(':lib_base_service_api')
+    api 'com.alibaba:arouter-api:1.5.2'
 }

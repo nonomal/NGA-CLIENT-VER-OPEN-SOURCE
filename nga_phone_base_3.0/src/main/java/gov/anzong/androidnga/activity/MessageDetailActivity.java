@@ -4,10 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.justwen.androidnga.base.activity.ARouterConstants;
+
 import gov.anzong.androidnga.R;
 import sp.phone.ui.fragment.MessageDetailFragment;
 import sp.phone.util.StringUtils;
 
+@Route(path = ARouterConstants.ACTIVITY_MESSAGE_DETAIL)
 public class MessageDetailActivity extends BaseActivity {
 
     @Override

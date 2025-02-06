@@ -1,15 +1,13 @@
 plugins {
     id 'com.android.library'
-    id 'kotlin-android'
 }
 
 android {
-    namespace 'com.justwen.androidnga.module.account'
-    compileSdkVersion project.compileSdkVersion
+    namespace 'com.justwen.androidnga.ui'
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion project.minSdkVersion
-        targetSdkVersion project.targetSdkVersion
+        minSdk 24
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -28,7 +26,10 @@ android {
 }
 
 dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
     testImplementation 'junit:junit:4.13.2'
-    implementation 'com.alibaba:arouter-api:1.5.2'
-    implementation project(':lib_base_service_api')
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }
