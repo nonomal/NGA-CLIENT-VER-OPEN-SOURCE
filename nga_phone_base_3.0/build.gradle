@@ -153,7 +153,7 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
     implementation 'com.github.daniel-stoneuk:material-about-library:2.3.0'
-    implementation project(':lib_common')
+    implementation project(':lib_base_common')
     implementation project(':lib_cloud')
     implementation project(':lib_core')
     implementation project(':lib_base_logger')
@@ -172,4 +172,6 @@ dependencies {
     //noinspection KtxExtensionAvailable
     implementation "androidx.preference:preference:$preference_version"
 
+    // paging
+    implementation "androidx.paging:paging-compose:$paging_version"
 }

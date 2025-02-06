@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'kotlin-android'
 }
 
 android {
@@ -35,8 +36,8 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit-converters:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation project(':lib_base_common')
 
-    implementation project(':lib_common')
     implementation project(':lib_base_logger')
 
     implementation 'commons-io:commons-io:2.11.0'

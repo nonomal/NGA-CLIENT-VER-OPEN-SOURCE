@@ -37,8 +37,8 @@ dependencies {
 
     // paging
     implementation "androidx.paging:paging-compose:$paging_version"
+    implementation project(':lib_base_common')
 
-    implementation project(':lib_common')
     implementation project(':lib_base_network')
     implementation project(':lib_core_data')
 
