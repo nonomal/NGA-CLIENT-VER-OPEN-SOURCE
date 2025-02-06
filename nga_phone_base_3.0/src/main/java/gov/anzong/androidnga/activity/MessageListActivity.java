@@ -21,7 +21,6 @@ import sp.phone.ui.adapter.ActionBarUserListAdapter;
 import sp.phone.ui.fragment.MessageListFragment;
 import sp.phone.util.StringUtils;
 
-@Route(path = ARouterConstants.ACTIVITY_MESSAGE_LIST)
 public class MessageListActivity extends BaseActivity
         implements View.OnClickListener {
 

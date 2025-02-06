@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModelProvider
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import gov.anzong.androidnga.R
 import gov.anzong.androidnga.activity.MessageDetailActivity
@@ -32,6 +33,7 @@ import gov.anzong.androidnga.compose.widget.PullRefreshColumn
 import gov.anzong.androidnga.service.UserManagerService
 import sp.phone.http.bean.MessageThreadPageInfo
 
+@Route(path = ARouterConstants.ACTIVITY_MESSAGE_LIST)
 class MessageListActivity : BaseComposeActivity() {
 
     private val viewModel: MessageViewModel by lazy {
