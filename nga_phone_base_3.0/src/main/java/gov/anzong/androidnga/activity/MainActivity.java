@@ -139,10 +139,9 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startMessageActivity() {
-        //ARouterUtils
-        //        .build(ARouterConstants.ACTIVITY_MESSAGE_LIST)
-        //        .navigation(this);
-        startActivity(new Intent(this, MessageListActivity.class));
+        ARouterUtils
+                .build(ARouterConstants.ACTIVITY_MESSAGE_LIST)
+                .navigation(this);
     }
 
     private void aboutNgaClient() {

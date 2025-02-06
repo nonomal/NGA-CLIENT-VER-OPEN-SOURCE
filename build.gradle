@@ -9,6 +9,7 @@ buildscript {
         fastJson_version = '1.1.71.android'
         retrofit_version = '2.6.0'
         paging_version = '3.3.0'
+        arouter_version = '1.5.2'
     }
     repositories {
         maven { url 'https://maven.aliyun.com/repository/google' }

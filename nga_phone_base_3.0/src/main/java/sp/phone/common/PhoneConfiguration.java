@@ -22,7 +22,6 @@ public class PhoneConfiguration extends PreferenceKey implements SharedPreferenc
     public Class<?> signPostActivityClass = SignPostActivity.class;
     public Class<?> profileActivityClass = ProfileActivity.class;
     public Class<?> loginActivityClass = LoginActivity.class;
-    public Class<?> messageDetialActivity = MessageDetailActivity.class;
 
     private boolean mNotificationEnabled;
 

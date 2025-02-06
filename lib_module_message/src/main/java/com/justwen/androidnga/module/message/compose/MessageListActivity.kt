@@ -71,7 +71,6 @@ class MessageListActivity : BaseComposeActivity() {
 
     private fun startMessageDetail(messageInfo: MessageThreadPageInfo) {
         val mid = messageInfo.mid
-
         ARouter.getInstance().build(ARouterConstants.ACTIVITY_MESSAGE_DETAIL)
             .withInt("mid", mid)
             .navigation(this)
