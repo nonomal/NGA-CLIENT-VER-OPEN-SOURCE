@@ -2,4 +2,5 @@
 <resources>
     <string name="label_activity_message_list">短消息</string>
     <string name="label_activity_message_detail">短消息正文</string>
+    <string name="network_error">网络错误</string>
 </resources>

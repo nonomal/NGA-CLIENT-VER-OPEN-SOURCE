@@ -11,7 +11,6 @@ import gov.anzong.androidnga.R;
 import sp.phone.ui.fragment.MessageDetailFragment;
 import sp.phone.util.StringUtils;
 
-@Route(path = ARouterConstants.ACTIVITY_MESSAGE_DETAIL)
 public class MessageDetailActivity extends BaseActivity {
 
     @Override

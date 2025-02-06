@@ -43,7 +43,7 @@ class MessagePagingSource : PagingSource<Int, MessageThreadPageInfo>() {
             val factory = MessageConvertFactory()
             var nextKey: Int? = null
             val result = factory.getMessageListInfo(jsonString)?.let {
-                nextKey = if (it.__nextPage > 0) it.__nextPage else null
+                nextKey = if (it.__nextPage > 0) page + 1 else null
                 it.messageEntryList ?: emptyList()
             }
 

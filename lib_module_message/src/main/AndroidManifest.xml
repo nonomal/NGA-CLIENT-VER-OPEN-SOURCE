@@ -6,8 +6,12 @@
         <activity
             android:name="com.justwen.androidnga.module.message.compose.MessageListActivity"
             android:exported="false"
-            android:label="@string/label_activity_message_list"
-            android:theme="@style/AppThemeDayNightGreen" />
+            android:label="@string/label_activity_message_list" />
+
+        <activity
+            android:name="com.justwen.androidnga.module.message.compose.detail.MessageDetailActivity"
+            android:exported="false"
+            android:label="@string/label_activity_message_detail" />
 
     </application>
 

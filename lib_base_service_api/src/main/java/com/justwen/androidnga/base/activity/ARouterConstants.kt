@@ -6,7 +6,7 @@ class ARouterConstants {
         const val ACTIVITY_MESSAGE_LIST_NAME =
             "com.justwen.androidnga.module.message.compose.MessageListActivity"
         const val ACTIVITY_MESSAGE_POST = "/activity/post"
-        const val ACTIVITY_MESSAGE_DETAIL = "/activity/detail"
+        const val ACTIVITY_MESSAGE_DETAIL = "/message/detail"
 
     }
 }

@@ -1,5 +1,10 @@
 package com.justwen.androidnga.core.data;
 
+import android.util.Pair;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import gov.anzong.androidnga.common.base.JavaBean;
 
 public class MessageArticlePageInfo implements JavaBean {
@@ -16,6 +21,16 @@ public class MessageArticlePageInfo implements JavaBean {
     private String signature;
     private String formated_html_data;
 
+    private List<Pair<String, Boolean>> contentSections = new ArrayList<>();
+
+    public List<Pair<String, Boolean>> getContentSections() {
+        return contentSections;
+    }
+
+    public void setContentSections(List<Pair<String, Boolean>> contentSections) {
+        this.contentSections = contentSections;
+    }
+
     public int getLou() {
         return lou;
     }
@@ -25,7 +40,7 @@ public class MessageArticlePageInfo implements JavaBean {
     }
 
     public String getTime() {
-        return time;
+        return time == null ? "22 13" : time;
     }
 
     public void setTime(String time) {
@@ -41,7 +56,7 @@ public class MessageArticlePageInfo implements JavaBean {
     }
 
     public String getContent() {
-        return content;
+        return content == null ? "content" : content;
     }
 
     public void setContent(String content) {
@@ -49,7 +64,7 @@ public class MessageArticlePageInfo implements JavaBean {
     }
 
     public String getSubject() {
-        return subject;
+        return subject == null ? "subject" : subject;
     }
 
     public void setSubject(String subject) {
