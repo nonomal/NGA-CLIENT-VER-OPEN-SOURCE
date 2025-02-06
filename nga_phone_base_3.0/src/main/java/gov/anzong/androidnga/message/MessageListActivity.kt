@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModelProvider
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.justwen.androidnga.core.data.MessageThreadPageInfo
 import gov.anzong.androidnga.R
@@ -30,8 +31,9 @@ import gov.anzong.androidnga.arouter.ARouterConstants
 import com.justwen.androidnga.module.message.compose.MessageViewModel
 import gov.anzong.androidnga.compose.widget.OptionMenuData
 import gov.anzong.androidnga.compose.widget.PullRefreshColumn
-import gov.anzong.androidnga.service.UserManagerService
+import com.justwen.androidnga.module.account.api.IUserManagerService
 
+@Route(path = ARouterConstants.ACTIVITY_MESSAGE_LIST)
 class MessageListActivity : BaseComposeActivity() {
 
     private val viewModel: MessageViewModel by lazy {
@@ -46,7 +48,8 @@ class MessageListActivity : BaseComposeActivity() {
     }
 
     private fun showAccountSwitchDialog() {
-        UserManagerService.instance.showUserSwitchDialog(this) { buildContentView() }
+        val userManager = ARouter.getInstance().build(IUserManagerService.ROUTER_PATH).navigation() as IUserManagerService
+        userManager.showUserSwitchDialog(this) { buildContentView() }
     }
 
     override fun getFabClickAction(): () -> Unit {

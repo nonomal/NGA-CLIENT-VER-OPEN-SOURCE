@@ -2,19 +2,15 @@ package gov.anzong.androidnga.service
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.justwen.androidnga.module.account.api.IUserManagerService
 import gov.anzong.androidnga.base.util.ToastUtils
 import sp.phone.common.UserManagerImpl
 
-class UserManagerService private constructor() {
-    companion object {
-        val instance = Holder.INSTANCE
-    }
+@Route(path = IUserManagerService.ROUTER_PATH)
+class UserManagerService : IUserManagerService {
 
-    private object Holder {
-        val INSTANCE = UserManagerService()
-    }
-
-    fun showUserSwitchDialog(context: Context, callback: (() -> Unit)? = null) {
+    override fun showUserSwitchDialog(context: Context, callback: (() -> Unit)?) {
         val users = UserManagerImpl.getInstance().userList
         if (users.isNullOrEmpty()) {
             return
@@ -36,6 +32,9 @@ class UserManagerService private constructor() {
             }
         }.setTitle("切换账号")
         dialogBuilder.show()
+    }
+
+    override fun init(p0: Context?) {
     }
 
 }
