@@ -1,5 +1,7 @@
 package gov.anzong.androidnga.mvvm.model;
 
+import com.justwen.androidnga.core.data.MessageListInfo;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +12,6 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
-import sp.phone.http.bean.MessageListInfo;
 import sp.phone.http.retrofit.RetrofitHelper;
 import sp.phone.http.retrofit.RetrofitService;
 import sp.phone.mvp.model.convert.MessageConvertFactory;

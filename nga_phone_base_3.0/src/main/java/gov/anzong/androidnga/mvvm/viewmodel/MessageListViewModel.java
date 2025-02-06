@@ -5,9 +5,10 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
+import com.justwen.androidnga.core.data.MessageListInfo;
+
 import gov.anzong.androidnga.http.OnHttpCallBack;
 import gov.anzong.androidnga.mvvm.model.MessageListModel;
-import sp.phone.http.bean.MessageListInfo;
 
 /**
  * @author yangyihang

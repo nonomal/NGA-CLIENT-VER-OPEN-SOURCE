@@ -7,7 +7,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import gov.anzong.androidnga.compose.NetServiceKt
 import kotlinx.coroutines.flow.Flow
-import sp.phone.http.bean.MessageThreadPageInfo
+import com.justwen.androidnga.core.data.MessageThreadPageInfo
 import sp.phone.http.retrofit.RetrofitHelper
 import sp.phone.mvp.model.convert.MessageConvertFactory
 
@@ -23,16 +23,16 @@ object MessageRepository {
 
 }
 
-class MessagePagingSource : PagingSource<Int, MessageThreadPageInfo>() {
+class MessagePagingSource : PagingSource<Int, com.justwen.androidnga.core.data.MessageThreadPageInfo>() {
 
     private val paramMap: HashMap<String, String> =
         hashMapOf("__lib" to "message", "__act" to "message", "act" to "list", "lite" to "js")
 
-    override fun getRefreshKey(state: PagingState<Int, MessageThreadPageInfo>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, com.justwen.androidnga.core.data.MessageThreadPageInfo>): Int? {
         return null
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, MessageThreadPageInfo> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, com.justwen.androidnga.core.data.MessageThreadPageInfo> {
         try {
             val page = params.key ?: 1
             val preKey = if (page > 1) page - 1 else null

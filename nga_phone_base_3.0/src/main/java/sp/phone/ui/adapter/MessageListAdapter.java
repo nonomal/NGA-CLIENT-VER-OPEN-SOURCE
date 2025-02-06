@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.justwen.androidnga.core.data.MessageListInfo;
+import com.justwen.androidnga.core.data.MessageThreadPageInfo;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +21,6 @@ import gov.anzong.androidnga.R;
 import gov.anzong.androidnga.base.util.ContextUtils;
 import gov.anzong.androidnga.base.util.ToastUtils;
 import sp.phone.common.PhoneConfiguration;
-import sp.phone.http.bean.MessageListInfo;
-import sp.phone.http.bean.MessageThreadPageInfo;
 import sp.phone.theme.ThemeManager;
 import sp.phone.util.StringUtils;
 import sp.phone.view.RecyclerViewEx;

@@ -2,6 +2,8 @@ package sp.phone.mvp.model.convert;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.justwen.androidnga.core.data.MessageListInfo;
+import com.justwen.androidnga.core.data.MessageThreadPageInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +13,6 @@ import gov.anzong.androidnga.base.util.ContextUtils;
 import sp.phone.common.PhoneConfiguration;
 import sp.phone.http.bean.MessageArticlePageInfo;
 import sp.phone.http.bean.MessageDetailInfo;
-import sp.phone.http.bean.MessageListInfo;
-import sp.phone.http.bean.MessageThreadPageInfo;
 import sp.phone.theme.ThemeManager;
 import sp.phone.util.NLog;
 import sp.phone.util.StringUtils;

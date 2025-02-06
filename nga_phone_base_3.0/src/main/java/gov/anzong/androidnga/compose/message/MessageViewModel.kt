@@ -5,11 +5,11 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import kotlinx.coroutines.flow.Flow
-import sp.phone.http.bean.MessageThreadPageInfo
+import com.justwen.androidnga.core.data.MessageThreadPageInfo
 
 class MessageViewModel : ViewModel() {
 
-    fun getMessageListData(): Flow<PagingData<MessageThreadPageInfo>> {
+    fun getMessageListData(): Flow<PagingData<com.justwen.androidnga.core.data.MessageThreadPageInfo>> {
         return MessageRepository.getMessageListData().cachedIn(viewModelScope)
     }
 }

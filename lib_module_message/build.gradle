@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'gov.anzong.androidnga.core.remote'
+    namespace 'com.justwen.androidnga.module.message'
     compileSdkVersion project.compileSdkVersion
 
     defaultConfig {
@@ -28,4 +28,6 @@ android {
 
 dependencies {
     testImplementation 'junit:junit:4.13.2'
+
+    implementation project(':lib_common')
 }
