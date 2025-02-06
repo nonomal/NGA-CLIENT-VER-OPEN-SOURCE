@@ -1,11 +1,11 @@
-package sp.phone.util;
+package gov.anzong.androidnga.common.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import gov.anzong.androidnga.R;
 import gov.anzong.androidnga.base.util.ContextUtils;
 import gov.anzong.androidnga.common.PreferenceKey;
+import gov.anzong.androidnga.common.R;
 
 /**
  * Created by Justwen on 2018/7/2.

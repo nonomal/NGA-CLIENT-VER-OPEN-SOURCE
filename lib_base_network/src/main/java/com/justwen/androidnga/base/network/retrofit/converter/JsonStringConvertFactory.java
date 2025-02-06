@@ -1,4 +1,4 @@
-package sp.phone.http.retrofit.converter;
+package com.justwen.androidnga.base.network.retrofit.converter;
 
 import org.apache.commons.io.IOUtils;
 
@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
-import gov.anzong.androidnga.debug.Debugger;
+import gov.anzong.androidnga.base.debug.Debugger;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.Retrofit;

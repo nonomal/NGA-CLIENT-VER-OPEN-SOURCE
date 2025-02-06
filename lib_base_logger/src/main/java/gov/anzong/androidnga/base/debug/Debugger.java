@@ -1,4 +1,4 @@
-package gov.anzong.androidnga.debug;
+package gov.anzong.androidnga.base.debug;
 
 import android.os.Environment;
 

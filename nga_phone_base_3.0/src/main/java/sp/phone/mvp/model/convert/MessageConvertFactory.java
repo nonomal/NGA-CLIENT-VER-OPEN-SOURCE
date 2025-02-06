@@ -14,7 +14,7 @@ import sp.phone.common.PhoneConfiguration;
 import sp.phone.http.bean.MessageArticlePageInfo;
 import sp.phone.http.bean.MessageDetailInfo;
 import sp.phone.theme.ThemeManager;
-import sp.phone.util.NLog;
+import gov.anzong.androidnga.common.util.NLog;
 import sp.phone.util.StringUtils;
 
 /**

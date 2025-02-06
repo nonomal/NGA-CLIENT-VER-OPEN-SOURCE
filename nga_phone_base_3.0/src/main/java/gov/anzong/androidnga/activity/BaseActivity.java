@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -23,7 +21,7 @@ import gov.anzong.androidnga.common.PreferenceKey;
 import sp.phone.common.NotificationController;
 import sp.phone.common.PhoneConfiguration;
 import sp.phone.theme.ThemeManager;
-import sp.phone.util.NLog;
+import gov.anzong.androidnga.common.util.NLog;
 
 /**
  * Created by liuboyu on 16/6/28.

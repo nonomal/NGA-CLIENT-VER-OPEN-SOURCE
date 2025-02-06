@@ -1,4 +1,4 @@
-package sp.phone.http.retrofit;
+package com.justwen.androidnga.base.network.retrofit;
 
 import java.util.Map;
 

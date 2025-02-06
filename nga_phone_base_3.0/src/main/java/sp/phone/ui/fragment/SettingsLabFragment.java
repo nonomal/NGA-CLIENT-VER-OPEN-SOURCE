@@ -14,7 +14,7 @@ import gov.anzong.androidnga.base.logger.Logger;
 import gov.anzong.androidnga.base.util.PermissionUtils;
 import gov.anzong.androidnga.common.PreferenceKey;
 import gov.anzong.androidnga.ui.fragment.BasePreferenceFragment;
-import sp.phone.http.retrofit.RetrofitHelper;
+import com.justwen.androidnga.base.network.retrofit.RetrofitHelper;
 import sp.phone.task.CheckInTask;
 
 public class SettingsLabFragment extends BasePreferenceFragment {

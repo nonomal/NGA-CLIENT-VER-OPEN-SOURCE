@@ -1,29 +1,27 @@
-package sp.phone.http.retrofit;
+package com.justwen.androidnga.base.network.retrofit;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.webkit.WebSettings;
 
+import com.justwen.androidnga.base.network.retrofit.converter.JsonStringConvertFactory;
+
 import java.net.URLDecoder;
 
+import gov.anzong.androidnga.base.debug.Debugger;
 import gov.anzong.androidnga.base.util.ContextUtils;
 import gov.anzong.androidnga.base.util.PreferenceUtils;
 import gov.anzong.androidnga.base.util.StringUtils;
-import gov.anzong.androidnga.base.util.ThreadUtils;
 import gov.anzong.androidnga.common.PreferenceKey;
-import gov.anzong.androidnga.debug.Debugger;
+import gov.anzong.androidnga.common.util.ForumUtils;
+import gov.anzong.androidnga.common.util.NLog;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import sp.phone.common.UserManagerImpl;
-import sp.phone.http.retrofit.converter.JsonStringConvertFactory;
-import sp.phone.util.ForumUtils;
-import sp.phone.util.NLog;
-import sp.phone.view.webview.WebViewEx;
 
 /**
  * Created by Justwen on 2017/10/10.
@@ -38,6 +36,12 @@ public class RetrofitHelper {
     private String mBaseUrl;
 
     private String mUserAgent = "";
+
+    private static CookieProvider mCookieProvider;
+
+    public interface CookieProvider {
+        String getCookie();
+    }
 
     private RetrofitHelper() {
         Context context = ContextUtils.getContext();
@@ -61,6 +65,9 @@ public class RetrofitHelper {
 
     }
 
+    public static void setCookieProvider(CookieProvider cookieProvider) {
+        mCookieProvider = cookieProvider;
+    }
     public void setUserAgent(String userAgent) {
         mUserAgent = userAgent;
     }
@@ -99,8 +106,8 @@ public class RetrofitHelper {
             Request original = chain.request();
 
             String cookie = original.header("Cookie");
-            if (cookie == null) {
-                cookie = UserManagerImpl.getInstance().getCookie();
+            if (cookie == null && mCookieProvider != null) {
+                cookie = mCookieProvider.getCookie();
             }
             Request request = original.newBuilder()
                     .header("Cookie", cookie)

@@ -8,7 +8,7 @@ import androidx.paging.PagingState
 import gov.anzong.androidnga.compose.NetServiceKt
 import kotlinx.coroutines.flow.Flow
 import com.justwen.androidnga.core.data.MessageThreadPageInfo
-import sp.phone.http.retrofit.RetrofitHelper
+import com.justwen.androidnga.base.network.retrofit.RetrofitHelper
 import sp.phone.mvp.model.convert.MessageConvertFactory
 
 object MessageRepository {

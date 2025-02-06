@@ -12,8 +12,8 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
-import sp.phone.http.retrofit.RetrofitHelper;
-import sp.phone.http.retrofit.RetrofitService;
+import com.justwen.androidnga.base.network.retrofit.RetrofitHelper;
+import com.justwen.androidnga.base.network.retrofit.RetrofitService;
 import sp.phone.mvp.model.convert.MessageConvertFactory;
 
 /**

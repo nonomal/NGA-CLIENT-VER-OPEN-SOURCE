@@ -27,7 +27,7 @@ import sp.phone.mvp.model.entity.ThreadPageInfo;
 import sp.phone.theme.ThemeManager;
 import sp.phone.util.FunctionUtils;
 import sp.phone.util.HttpUtil;
-import sp.phone.util.NLog;
+import gov.anzong.androidnga.common.util.NLog;
 import sp.phone.util.StringUtils;
 
 /**

@@ -1,8 +1,6 @@
-package sp.phone.util;
+package gov.anzong.androidnga.common.util;
 
 import android.util.Log;
-
-import gov.anzong.androidnga.BuildConfig;
 
 /**
  * 带开关的Log
@@ -11,7 +9,7 @@ import gov.anzong.androidnga.BuildConfig;
 
 public class NLog {
 
-    private static boolean sDebugMode = BuildConfig.DEBUG;
+    private static boolean sDebugMode = false;
 
     public static final String TAG = "NGAClient";
 
