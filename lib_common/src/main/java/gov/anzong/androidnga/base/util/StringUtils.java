@@ -3,7 +3,10 @@ package gov.anzong.androidnga.base.util;
 import com.google.common.base.Strings;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -44,5 +47,21 @@ public class StringUtils {
     public static boolean isEmpty(String content) {
         return Strings.isNullOrEmpty(content);
     }
+
+
+    public static String timeStamp2Date1(String timeStamp) {
+        return timeStamp2Date(timeStamp, "yyyy-MM-dd HH:mm:ss");
+    }
+
+    public static String timeStamp2Date2(String timeStamp) {
+        return timeStamp2Date(timeStamp, "MM-dd HH:mm");
+    }
+
+    public static String timeStamp2Date(String timeStamp, String format) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(Long.parseLong(timeStamp) * 1000);
+        return new SimpleDateFormat(format, Locale.getDefault()).format(calendar.getTime());
+    }
+
 
 }

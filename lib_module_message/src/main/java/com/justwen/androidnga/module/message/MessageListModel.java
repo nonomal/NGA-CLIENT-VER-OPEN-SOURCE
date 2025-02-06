@@ -1,5 +1,8 @@
-package gov.anzong.androidnga.mvvm.model;
+package com.justwen.androidnga.module.message;
 
+
+import com.justwen.androidnga.base.network.retrofit.RetrofitHelper;
+import com.justwen.androidnga.base.network.retrofit.RetrofitService;
 import com.justwen.androidnga.core.data.MessageListInfo;
 
 import java.util.HashMap;
@@ -12,9 +15,6 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
-import com.justwen.androidnga.base.network.retrofit.RetrofitHelper;
-import com.justwen.androidnga.base.network.retrofit.RetrofitService;
-import sp.phone.mvp.model.convert.MessageConvertFactory;
 
 /**
  * Created by Justwen on 2017/10/10.

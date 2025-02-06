@@ -14,7 +14,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import gov.anzong.androidnga.R;
 import gov.anzong.androidnga.base.util.ToastUtils;
-import gov.anzong.androidnga.mvvm.viewmodel.MessageListViewModel;
+import com.justwen.androidnga.module.message.MessageListViewModel;
 import sp.phone.ui.adapter.MessageListAdapter;
 import sp.phone.util.ActivityUtils;
 import sp.phone.view.RecyclerViewEx;

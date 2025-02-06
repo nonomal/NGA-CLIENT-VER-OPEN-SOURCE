@@ -1,7 +1,7 @@
 package sp.phone.mvp.contract;
 
 import gov.anzong.androidnga.http.OnHttpCallBack;
-import sp.phone.http.bean.MessageDetailInfo;
+import com.justwen.androidnga.core.data.MessageDetailInfo;
 
 /**
  * Created by Justwen on 2017/10/11.

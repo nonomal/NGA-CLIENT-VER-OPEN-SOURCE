@@ -1,4 +1,4 @@
-package sp.phone.http.bean;
+package com.justwen.androidnga.core.data;
 
 import gov.anzong.androidnga.common.base.JavaBean;
 

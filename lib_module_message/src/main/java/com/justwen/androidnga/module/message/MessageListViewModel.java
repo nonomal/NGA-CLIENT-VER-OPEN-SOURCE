@@ -1,4 +1,4 @@
-package gov.anzong.androidnga.mvvm.viewmodel;
+package com.justwen.androidnga.module.message;
 
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.MutableLiveData;
@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 import com.justwen.androidnga.core.data.MessageListInfo;
 
 import gov.anzong.androidnga.http.OnHttpCallBack;
-import gov.anzong.androidnga.mvvm.model.MessageListModel;
+import com.justwen.androidnga.module.message.MessageListModel;
 
 /**
  * @author yangyihang
