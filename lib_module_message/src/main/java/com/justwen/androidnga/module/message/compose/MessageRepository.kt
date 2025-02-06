@@ -1,15 +1,15 @@
-package gov.anzong.androidnga.compose.message
+package com.justwen.androidnga.module.message.compose
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import gov.anzong.androidnga.compose.NetServiceKt
 import kotlinx.coroutines.flow.Flow
 import com.justwen.androidnga.core.data.MessageThreadPageInfo
 import com.justwen.androidnga.base.network.retrofit.RetrofitHelper
-import sp.phone.mvp.model.convert.MessageConvertFactory
+import com.justwen.androidnga.base.network.retrofit.RetrofitServiceKt
+import com.justwen.androidnga.module.message.MessageConvertFactory
 
 object MessageRepository {
 
@@ -23,21 +23,21 @@ object MessageRepository {
 
 }
 
-class MessagePagingSource : PagingSource<Int, com.justwen.androidnga.core.data.MessageThreadPageInfo>() {
+class MessagePagingSource : PagingSource<Int, MessageThreadPageInfo>() {
 
     private val paramMap: HashMap<String, String> =
         hashMapOf("__lib" to "message", "__act" to "message", "act" to "list", "lite" to "js")
 
-    override fun getRefreshKey(state: PagingState<Int, com.justwen.androidnga.core.data.MessageThreadPageInfo>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, MessageThreadPageInfo>): Int? {
         return null
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, com.justwen.androidnga.core.data.MessageThreadPageInfo> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, MessageThreadPageInfo> {
         try {
             val page = params.key ?: 1
             val preKey = if (page > 1) page - 1 else null
             val netService =
-                RetrofitHelper.getInstance().getService(NetServiceKt::class.java) as NetServiceKt
+                RetrofitHelper.getInstance().getService(RetrofitServiceKt::class.java) as RetrofitServiceKt
             paramMap["page"] = page.toString()
             val jsonString = netService.getString(paramMap)
             val factory = MessageConvertFactory()

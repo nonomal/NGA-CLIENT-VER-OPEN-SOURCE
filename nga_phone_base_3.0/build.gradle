@@ -172,6 +172,4 @@ dependencies {
     //noinspection KtxExtensionAvailable
     implementation "androidx.preference:preference:$preference_version"
 
-    // paging
-    implementation 'androidx.paging:paging-compose:3.3.0'
 }

@@ -32,6 +32,11 @@ dependencies {
 
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    // paging
+    implementation "androidx.paging:paging-compose:$paging_version"
 
     implementation project(':lib_common')
     implementation project(':lib_base_network')

@@ -27,7 +27,7 @@ import com.justwen.androidnga.core.data.MessageThreadPageInfo
 import gov.anzong.androidnga.R
 import gov.anzong.androidnga.activity.MessageDetailActivity
 import gov.anzong.androidnga.arouter.ARouterConstants
-import gov.anzong.androidnga.compose.message.MessageViewModel
+import com.justwen.androidnga.module.message.compose.MessageViewModel
 import gov.anzong.androidnga.compose.widget.OptionMenuData
 import gov.anzong.androidnga.compose.widget.PullRefreshColumn
 import gov.anzong.androidnga.service.UserManagerService
