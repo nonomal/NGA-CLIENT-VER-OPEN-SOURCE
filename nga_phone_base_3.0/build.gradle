@@ -71,7 +71,7 @@ android {
             jniDebuggable false
             renderscriptDebuggable false
             pseudoLocalesEnabled false
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles 'proguard.cfg'
             zipAlignEnabled true
             signingConfig signingConfigs.signingConfig
