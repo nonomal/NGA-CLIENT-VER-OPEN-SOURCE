@@ -81,4 +81,15 @@ public class User implements JavaBean {
     public boolean equals(Object obj) {
         return obj instanceof User && mUserId.equals(getUserId());
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "User{" +
+                "mCid='" + mCid + '\'' +
+                ", mUserId='" + mUserId + '\'' +
+                ", mNickName='" + mNickName + '\'' +
+                ", mAvatarUrl='" + mAvatarUrl + '\'' +
+                '}';
+    }
 }
