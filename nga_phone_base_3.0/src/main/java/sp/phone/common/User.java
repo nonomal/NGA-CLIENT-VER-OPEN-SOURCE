@@ -6,12 +6,14 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import gov.anzong.androidnga.common.base.JavaBean;
+
 /**
  * @author Justwen
  * @date 2017/12/26
  */
 @Entity(tableName = "users")
-public class User {
+public class User implements JavaBean {
 
     @ColumnInfo(name = "cid")
     public String mCid;

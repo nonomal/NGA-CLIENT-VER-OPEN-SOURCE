@@ -1,6 +1,7 @@
 package gov.anzong.androidnga.base.debug;
 
 import android.os.Environment;
+import android.util.Log;
 
 import org.apache.commons.io.FileUtils;
 
@@ -16,6 +17,19 @@ import okhttp3.Request;
 public class Debugger {
 
     private static boolean sDebugMode;
+
+    public static void writeException(Throwable data) {
+        if (!sDebugMode) {
+            return;
+        }
+        try {
+            String msg = Log.getStackTraceString(data);
+            File debugFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/gov.anzong.androidnga/debug/data.json");
+            FileUtils.write(debugFile, msg + "\n\n", true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void collectBody(String body) {
         if (!sDebugMode) {

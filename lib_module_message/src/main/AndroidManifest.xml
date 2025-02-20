@@ -13,6 +13,10 @@
             android:exported="false"
             android:label="@string/label_activity_message_detail" />
 
+        <activity
+            android:name="com.justwen.androidnga.module.message.compose.post.MessagePostActivity"
+            android:exported="false" />
+
     </application>
 
 
