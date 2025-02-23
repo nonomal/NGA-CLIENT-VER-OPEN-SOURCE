@@ -12,6 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import gov.anzong.androidnga.Utils;
+import gov.anzong.androidnga.base.debug.Debugger;
 import gov.anzong.androidnga.core.HtmlConvertFactory;
 import gov.anzong.androidnga.core.data.AttachmentData;
 import gov.anzong.androidnga.core.data.CommentData;
@@ -74,6 +75,7 @@ public class ArticleConvertFactory {
         } catch (Exception e) {
             NLog.e(TAG, "can not parse :\n" + js);
             e.printStackTrace();
+            Debugger.writeException(e);
         }
         return data;
     }
